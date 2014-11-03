@@ -1,0 +1,92 @@
+{# -- extend base layout -#}
+{% extends "base.html" %}
+
+{% block extcss %}
+    <link href="{{ url_for('static', filename = 'css/plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">DLOP主页</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+        <div class="col-lg-12">
+            {% include 'flash.html' %}
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+   <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
+                </div> 
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <th>姓名</th>
+                                <th>职位</th>
+                                <th>Email</th>
+                                <th class="hidden-xs">添加日期</th>
+                                <th class="hidden-xs">状态</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>初雪</td>
+                                  <td>客服</td>
+                                  <td>robert@gmail.com</td>
+                                  <td class="hidden-xs">8-15-2013</td>
+                                  <td class="hidden-xs"><span class="label label-success">批准</span></td>
+                                </tr>
+                                <tr>
+                                  <td>采萱</td>
+                                  <td>客服主管</td>
+                                  <td>john@gmail.com</td>
+                                  <td class="hidden-xs">8-15-2013</td>
+                                  <td class="hidden-xs"><span class="label label-success">待处理</span></td>
+                                </tr>
+                                <tr>
+                                  <td>怀玉</td>
+                                  <td>电销</td>
+                                  <td>olivia@gmail.com</td>
+                                  <td class="hidden-xs">8-15-2013</td>
+                                  <td class="hidden-xs"><span class="label label-success">批准</span></td>
+                                </tr>
+                                <tr>
+                                  <td>古兰</td>
+                                  <td>电销组长</td>
+                                  <td>elliot@gmail.com</td>
+                                  <td class="hidden-xs">8-15-2013</td>
+                                  <td class="hidden-xs"><span class="label label-danger">拒绝</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Maggie</td>
+                                  <td>电销主管</td>
+                                  <td>maggie@gmail.com</td>
+                                  <td class="hidden-xs">8-15-2013</td>
+                                  <td class="hidden-xs"><span class="label label-success">批准</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
+
+{% block extjs %}
+    <script src="{{ url_for('static', filename = 'js/plugins/dataTables/jquery.dataTables.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/plugins/dataTables/dataTables.bootstrap.js') }}"></script>
+{% endblock %}

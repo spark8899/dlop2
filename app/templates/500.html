@@ -1,0 +1,20 @@
+{# -- extend base layout -#}
+{% extends "base.html" %}
+
+{% block content %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">{{ '500 ERROR' }}</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+        <div class="col-lg-12">
+            <p>{{ 'An unexpected error has occurred' }}</p>
+            <p>{{ 'The administrator has been notified. Sorry for the inconvenience!' }}</p>
+            <p><a href="{{url_for('index')}}">{{ 'Back' }}</a></p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
