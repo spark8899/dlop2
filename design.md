@@ -11,6 +11,7 @@ web模板使用的sb-admin2，链接：http://startbootstrap.com/template-overvi
 
 # 导航图
 
+```bash
 |-- 主页
 |
 |-- 资产管理
@@ -34,3 +35,5 @@ web模板使用的sb-admin2，链接：http://startbootstrap.com/template-overvi
 |-- 脚本库
 |
 |-- 日志管理
+```
+
