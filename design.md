@@ -1,5 +1,5 @@
 # 简介
-dlop是大乐游戏的运维管理平台，以flask+mysql为框架开发的。
+dlop是自己开发的运维管理平台，以flask+mysql为框架开发的。
 
 flask链接：http://flask.pocoo.org/
 
@@ -37,3 +37,4 @@ web模板使用的sb-admin2，链接：http://startbootstrap.com/template-overvi
 |-- 日志管理
 ```
 
+# 数据库设计
