@@ -1,0 +1,4 @@
+/*
+   创建DLOP数据库
+*/
+CREATE SCHEMA IF NOT EXISTS `dlop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;

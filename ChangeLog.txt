@@ -1,0 +1,11 @@
+# dlop.py changelog
+
+## 2014-11-17 0.02
+
+* add database version.
+
+## 2014-11-09 0.01
+
+* First public version.
+
+

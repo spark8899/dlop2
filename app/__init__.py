@@ -1,12 +1,12 @@
 from flask import Flask
-from config import *
+from flask.ext.sqlalchemy import SQLAlchemy
+#from config import *
 
 app = Flask(__name__)
 app.config.from_object('config')
+db = SQLAlchemy(app)
 
-#db = MongoEngine(app)
-
-from app import views
+from app import views, models
 
 #def register_blueprints(app):
 #    # Prevents circular imports
