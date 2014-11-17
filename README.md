@@ -66,4 +66,4 @@ task
 flask/bin/celery -A queue.tasks worker -B -l info
 
 ## License
-This project is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+This project is licensed under the [Apache-2.0 license](http://opensource.org/licenses/Apache-2.0).
