@@ -3,4 +3,9 @@ Flask-Script
 Flask-WTF
 Flask-SQLAlchemy
 
-gunicorn
+# testing
+nose
+nose-cov
+
+# lint
+flake8

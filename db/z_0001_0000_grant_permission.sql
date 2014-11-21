@@ -1,6 +1,7 @@
 /*
 #dlop account
-create user dlop@'%' identified by 'dloppassword';
+cREATE user dlop@'%' identified by 'dloppassword';
+GRANT all ON dlop.* TO dlop@'%';
 
 GRANT EXECUTE ON PROCEDURE 'xxx' TO 'dlop';
 /*
