@@ -8,16 +8,12 @@ db = SQLAlchemy(app)
 
 from app import views, models
 
-#def register_blueprints(app):
-#    # Prevents circular imports
-#    from app.assets_manage import assets
-#    from app.project_manage import project
-#    from app.script_manage import myscript
-#    app.register_blueprint(assets)
-#    app.register_blueprint(project)
-#    app.register_blueprint(myscript)
+def register_routes(app):
+    from .views import front, asset
+    app.register_blueprint(asset.bp, url_prefix='/asset')
+    return app
 
-#register_blueprints(app)
+register_routes(app)
 
 #logger file setting
 if not app.debug:

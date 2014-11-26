@@ -1,6 +1,16 @@
 Flask
-Flask-Script
-Flask-WTF
+
+# database
 Flask-SQLAlchemy
+
+# cache support
+Flask-Cache
+
+# form support
+Flask-WTF
+WTForms
+
+# command line tools
+Flask-Script
 
 gunicorn
