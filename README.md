@@ -57,7 +57,6 @@ SQLALCHEMY_DATABASE_URI="mysql://dlop:dlop@localhost/dlop"
 3. Run
 
 ```bash
-# mkdir tmp
 # ./run.py
 ```
 

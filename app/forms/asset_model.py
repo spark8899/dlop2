@@ -17,8 +17,8 @@ class Asset_modelForm(BaseForm):
         ],
         default='server',
     )
-    manufacturer = StringField(u'设备厂商')
-    model = StringField(u'设备型号')
+    manufacturer = StringField(u'设备厂商', [validators.Required(), validators.Length(min=2, max=80)])
+    model = StringField(u'设备型号', [validators.Required(), validators.Length(min=2, max=120)])
     cpu_model = StringField(u'CPU型号')
     cpu_num = StringField(u'CPU数量')
     memory_model = StringField(u'内存型号')

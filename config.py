@@ -3,6 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 CSRF_ENABLED = True
 SECRET_KEY = '3xLntKKFRZITY423'
+WTF_CSRF_SECRET_KEY = 'QPo3QVT0UyBrPmoqhf'
 
 MYSQL_DATABASE_USER="dlop"
 MYSQL_DATABASE_PASSWORD="dlop"
