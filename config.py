@@ -12,6 +12,6 @@ MYSQL_DATABASE_HOST="localhost"
 SQLALCHEMY_DATABASE_URI="mysql://dlop:dlop@localhost/dlop"
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 SQLALCHEMY_BINDS = {
-    'dlop': 'mysql://dlop:dlop@localhost/dlog',
+    'dlop': 'mysql://dlop:dlop@localhost/dlop',
 }
 TABLE_PREFIX = "dlop_"

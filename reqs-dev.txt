@@ -2,6 +2,7 @@ Flask
 
 # database
 Flask-SQLAlchemy
+mysql-python
 
 # cache support
 Flask-Cache

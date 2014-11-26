@@ -5,6 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+db.engine.pool._use_threadlocal = True
 
 from app import views, models
 
@@ -14,6 +15,7 @@ def register_routes(app):
     return app
 
 register_routes(app)
+db.create_all()
 
 #logger file setting
 if not app.debug:

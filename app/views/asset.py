@@ -10,19 +10,19 @@ __all__ = ['bp']
 bp = Blueprint('asset', __name__)
 
 @bp.route('/model/')
-def asset_model():
+def model():
     """Asset_model pages."""
     Asset_model = Asset_model.query.order_by(Asset_model.updated.desc()).all()
-    return render_template('asset/model/index.html', model=model)
+    return render_template('asset/model.html', models=Asset_model)
 
 
-@bp.route('/model/create', methods=['GET', 'POST'])
-def asset_model_create():
+@bp.route('/model/add', methods=['GET', 'POST'])
+def model_add():
     """
-    Create a asset_model.
+    Add a asset_model.
     """
     form = Asset_modelForm()
     if form.validate_on_submit():
         asset_model = form.save()
-        #return redirect(url_for('.view', urlname=node.urlname))
-    return render_template('asset/model/create.html', form=form)
+        return redirect(url_for('.view', urlname=asset.urlname))
+    return render_template('asset/model_add.html', form=form)
