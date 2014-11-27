@@ -1,0 +1,125 @@
+{# -- extend base layout -#}
+{% extends "base.html" %}
+
+{% block extcss %}
+    <link href="{{ url_for('static', filename = 'css/plugins/dataTables.bootstrap.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">IDC管理</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+        <div class="col-lg-12">
+            {% include 'flash.html' %}
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+   <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/asset/idc/add">IDC添加</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> IDC列表</h3>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="idc_list">
+                            <thead>
+                                <tr>
+                                    <th>IDC编码</th>
+                                    <th>带宽</th>
+                                    <th>机柜数量</th>
+                                    <th>机柜编号</th>
+                                    <th>内网网段</th>
+                                    <th>外网网段</th>
+                                    <th>详细地址</th>
+                                    <th>客服电话</th>
+                                    <th>验证码</th>
+                                    <th>传真</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for idc in idcs %}
+                                <tr class="odd gradeX">
+                                  <td>{{idc["id"]}}</td>
+                                  <td>{{idc["bandwidth"]}}</td>
+                                  <td>{{idc["rack_num"]}}</td>
+                                  <td>{{idc["rack_code"]}}</td>
+                                  <td>{{idc["lan_ip"]}}</td>
+                                  <td>{{idc["wan_ip"]}}</td>
+                                  <td>{{idc["location"]}}</td>
+                                  <td>{{idc["telephone"]}}</td>
+                                  <td>{{idc["auth_code"]}}</td>
+                                  <td>{{idc["tax"]}}</td>
+                                  <td>{{idc["desc"]}}</td>
+                                  <td><a href="edit_{{idc["id"]}}" class="btn btn-success btn-xs" role="button">编辑</a>
+                                      <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#del_{{idc["id"]}}">删除</button>
+                                  </td>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="del_{{idc["id"]}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title" id="myModalLabel">确认删除？</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        删除机型<b>{{idc["id"]}}</b>，将不能还原，确认删除吗？？
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="del_{{idc["id"]}}" class="btn btn-danger" role="button">删除</a>&nbsp;&nbsp;
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+                                        <!-- /.modal -->
+                                </tr>
+                                {% endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
+
+{% block extjs %}
+    <script src="{{ url_for('static', filename = 'js/plugins/dataTables/jquery.dataTables.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/plugins/dataTables/dataTables.bootstrap.js') }}"></script>
+{% endblock %}
+
+{% block extscript %}
+<script>
+$(document).ready(function() {
+    $('#idc_list').dataTable({
+        "bJQueryUI": true
+    });
+});
+
+// popover demo
+$("[data-toggle=popover]")
+    .popover()
+</script>
+{% endblock %}

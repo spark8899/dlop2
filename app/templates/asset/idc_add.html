@@ -1,0 +1,155 @@
+{# -- extend base layout -#}
+{% extends "base.html" %}
+
+{% block content %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">IDC管理</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+        <div class="col-lg-12">
+            {% include 'flash.html' %}
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/asset/idc">IDC列表</a></li>
+                        </ul>
+                    </div>
+                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> IDC添加</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form method="post" action="/asset/idc/add" class="form-horizontal" role="form">
+                                {{form.hidden_tag()}}
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">IDC编码：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.id(class="form-control") }}
+                                        {% for error in form.errors.id %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">带宽：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.bandwidth(class="form-control") }}
+                                        {% for error in form.errors.bandwidth %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">机柜数量：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.rack_num(class="form-control") }}
+                                        {% for error in form.errors.rack_num %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">机柜编码：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.rack_code(class="form-control") }}
+                                        {% for error in form.errors.rack_code %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">内网网段：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.lan_ip(class="form-control") }}
+                                        {% for error in form.errors.lan_ip %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">外网网段：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.wan_ip(class="form-control") }}
+                                        {% for error in form.errors.wan_ip %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">详细地址：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.location(class="form-control") }}
+                                        {% for error in form.errors.location %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">客服电话：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.telephone(class="form-control") }}
+                                        {% for error in form.errors.telephone %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">验证码：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.auth_code(class="form-control") }}
+                                        {% for error in form.errors.auth_code %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">传真：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.tax(class="form-control") }}
+                                        {% for error in form.errors.tax %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">备注：</label>
+                                    <div class="col-sm-8">
+                                        {{ form.desc(class="form-control") }}
+                                        {% for error in form.errors.desc %}
+                                        <span style="color: red;">[{{error}}]</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-4">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <button type="submit" class="btn btn-default">添加</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="reset" class="btn btn-default">重置</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->            
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
