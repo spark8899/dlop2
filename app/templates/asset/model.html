@@ -9,7 +9,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">资产机型管理</h2>
+            <h2 class="page-header">机型管理</h2>
         </div>
         <!-- /.col-lg-12 -->
         <div class="col-lg-12">
@@ -25,10 +25,10 @@
                     <div class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/assets/model/add">服务器添加</a></li>
+                            <li><a href="/asset/model/add">机型添加</a></li>
                         </ul>
                     </div>
-                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> 资产机型列表</h3>
+                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> 机型列表</h3>
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -36,18 +36,19 @@
                         <table class="table table-striped table-bordered table-hover" id="model_list">
                             <thead>
                                 <tr>
-                                    <th>机型</th>
+                                    <th>机型编码</th>
                                     <th>机型类型</th>
-                                    <th>厂商</th>
+                                    <th>设备厂商</th>
                                     <th>设备型号</th>
                                     <th>CPU型号</th>
-                                    <th>CPU频率</th>
                                     <th>CPU数量</th>
                                     <th>内存型号</th>
                                     <th>内存大小</th>
+                                    <th>网口型号</th>
                                     <th>网口数量</th>
-                                    <th>硬盘名称</th>
+                                    <th>硬盘型号</th>
                                     <th>硬盘大小</th>
+                                    <th>闪存型号</th>
                                     <th>闪存大小</th>
                                     <th>RAID类型</th>
                                     <th>远程卡类型</th>
@@ -64,14 +65,15 @@
                                   <td>{{model["type"]}}</td>
                                   <td>{{model["manufacturer"]}}</td>
                                   <td>{{model["model"]}}</td>
-                                  <td>{{model["cpu_name"]}}</td>
-                                  <td>{{model["clock_speed"]}}</td>
+                                  <td>{{model["cpu_model"]}}</td>
                                   <td>{{model["cpu_num"]}}</td>
-                                  <td>{{model["memory_type"]}}</td>
+                                  <td>{{model["memory_model"]}}</td>
                                   <td>{{model["memory_size"]}}</td>
-                                  <td>{{model["network_port"]}}</td>
+                                  <td>{{model["netcard_model"]}}</td>
+                                  <td>{{model["netcard_num"]}}</td>
                                   <td>{{model["harddisk_name"]}}</td>
                                   <td>{{model["harddisk_size"]}}</td>
+                                  <td>{{model["flashdisk_name"]}}</td>
                                   <td>{{model["flashdisk_size"]}}</td>
                                   <td>{{model["raid_type"]}}</td>
                                   <td>{{model["remote_manage_card"]}}</td>
@@ -79,7 +81,7 @@
                                   <td>{{model["unit"]}}</td>
                                   <td>{{model["desc"]}}</td>
                                   <td><a href="edit_{{model["id"]}}" class="btn btn-success btn-xs" role="button">编辑</a>
-                                      <button class="btn btn-success btn-xs" data-toggle="modal" data-target="del_{{model["id"]}}">删除</button>
+                                      <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#del_{{model["id"]}}">删除</button>
                                   </td>
                                         <!-- Modal -->
                                         <div class="modal fade" id="del_{{model["id"]}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

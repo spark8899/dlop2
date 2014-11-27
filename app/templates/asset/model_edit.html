@@ -24,12 +24,12 @@
                             <li><a href="/asset/model">机型列表</a></li>
                         </ul>
                     </div>
-                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> 机型添加</h3>
+                    <h3 class="panel-title"><i class="fa fa-truck fa-fw"></i> 机型修改</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form method="post" action="/asset/model/add" class="form-horizontal" role="form">
+                            <form method="post" action="/asset/model/edit_{{ slug }}" class="form-horizontal" role="form">
                                 {{form.hidden_tag()}}
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">机型编码：</label>
@@ -206,7 +206,7 @@
                                     <div class="col-sm-4">
                                     </div>
                                     <div class="col-sm-8">
-                                        <button type="submit" class="btn btn-default">添加</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="submit" class="btn btn-default">修改</button>&nbsp;&nbsp;&nbsp;&nbsp;
                                         <button type="reset" class="btn btn-default">重置</button>
                                     </div>
                                 </div>
