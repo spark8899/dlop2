@@ -17,7 +17,11 @@ bp = Blueprint('asset', __name__)
 @bp.route('/model/')
 def model():
     """Asset_model pages."""
-    asset_model = Asset_model.query.order_by(Asset_model.id.desc()).all()
+    try:
+        asset_model = Asset_model.query.order_by(Asset_model.id.desc()).all()
+    except:
+        asset_model = null
+        flash(u"查询机型出错，请于管理员联系!") 
     return render_template('asset/model.html', title=title, models=asset_model)
 
 
@@ -27,8 +31,11 @@ def model_add():
     form = Asset_modelForm()
     if form.validate_on_submit():
         #app.logger.info(asset_model)
-        asset_model = form.save()
-        flash(u"添加机型成功!")
+        try:
+            asset_model = form.save()
+            flash(u"添加机型成功!")
+        except:
+            flash(u"添加机型出错，请于管理员联系!")
     else:
         if request.method == 'POST':
             flash(u"添加机型错误!")
@@ -44,8 +51,11 @@ def model_edit(id):
     if form.validate_on_submit():
         #app.logger.info(asset_model)
         form.populate_obj(asset_model)
-        asset_model.save()
-        flash(u"修改机型成功!")
+        try:
+            asset_model.save()
+            flash(u"修改机型成功!")
+        except:
+            flash(u"修改机型出错,请于管理员联系!")
     else:
         if request.method == 'POST':
             flash(u"修改机型错误!")
@@ -56,16 +66,22 @@ def model_edit(id):
 @bp.route('/model/del_<id>', methods=['GET'])
 def model_del(id):
     """Del a asset_model."""
-    asset_model = Asset_model.query.get_or_404(id)
-    asset_model.delete()
-    flash(u'删除机型' + id + u'成功！')
+    try:
+        asset_model = Asset_model.query.get_or_404(id)
+        asset_model.delete()
+        flash(u'删除机型' + id + u'成功！')
+    except:
+        flash(u'删除机型出错，请于管理员联系！')
     return redirect(url_for('.model'))
 
 
 @bp.route('/idc/')
 def idc():
     """Asset_idc pages."""
-    asset_idc = Asset_idc.query.order_by(Asset_idc.id.desc()).all()
+    try:
+        asset_idc = Asset_idc.query.order_by(Asset_idc.id.desc()).all()
+    except:
+        flash(u"查询IDC出错，请于管理员联系!") 
     return render_template('asset/idc.html', title=title, idcs=asset_idc)
 
 
@@ -75,8 +91,11 @@ def idc_add():
     form = Asset_idcForm()
     if form.validate_on_submit():
         #app.logger.info(asset_idc)
-        asset_idc = form.save()
-        flash(u"添加机型成功!")
+        try:
+            asset_idc = form.save()
+            flash(u"添加机型成功!")
+        except:
+            flash(u"添加机型出错，请于管理员联系!")
     else:
         if request.method == 'POST':
             flash(u"添加机型错误!")
@@ -92,8 +111,11 @@ def idc_edit(id):
     if form.validate_on_submit():
         #app.logger.info(asset_idc)
         form.populate_obj(asset_idc)
-        asset_idc.save()
-        flash(u"修改机型成功!")
+	try:
+            asset_idc.save()
+            flash(u"修改机型成功!")
+        except:
+            flash(u"修改机型出错，请于管理员联系!")
     else:
         if request.method == 'POST':
             flash(u"修改机型错误!")
@@ -104,7 +126,10 @@ def idc_edit(id):
 @bp.route('/idc/del_<id>', methods=['GET'])
 def idc_del(id):
     """Del a asset_idc."""
-    asset_idc = Asset_idc.query.get_or_404(id)
-    asset_idc.delete()
-    flash(u'删除机型' + id + u'成功！')
+    try:
+        asset_idc = Asset_idc.query.get_or_404(id)
+        asset_idc.delete()
+        flash(u'删除机型' + id + u'成功！')
+    except:
+        flash(u'删除机型出错，请于管理员联系！')
     return redirect(url_for('.idc'))
