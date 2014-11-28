@@ -36,24 +36,20 @@
                         <table class="table table-striped table-bordered table-hover" id="model_list">
                             <thead>
                                 <tr>
-                                    <th>机型编码</th>
-                                    <th>机型类型</th>
-                                    <th>设备厂商</th>
+                                    <th>编码</th>
+                                    <th>类型</th>
+                                    <th>厂商</th>
                                     <th>设备型号</th>
                                     <th>CPU型号</th>
                                     <th>CPU数量</th>
-                                    <th>内存型号</th>
                                     <th>内存大小</th>
-                                    <th>网口型号</th>
                                     <th>网口数量</th>
-                                    <th>硬盘型号</th>
-                                    <th>硬盘大小</th>
-                                    <th>闪存型号</th>
-                                    <th>闪存大小</th>
-                                    <th>RAID类型</th>
-                                    <th>远程卡类型</th>
-                                    <th>虚拟机类型</th>
-                                    <th>机柜U数</th>
+                                    <th>硬盘</th>
+                                    <th>闪存</th>
+                                    <th>RAID</th>
+                                    <th>远程管理</th>
+                                    <th>虚拟化</th>
+                                    <th>高度</th>
                                     <th>备注</th>
                                     <th>操作</th>
                                 </tr>
@@ -67,17 +63,13 @@
                                   <td>{{model["model"]}}</td>
                                   <td>{{model["cpu_model"]}}</td>
                                   <td>{{model["cpu_num"]}}</td>
-                                  <td>{{model["memory_model"]}}</td>
                                   <td>{{model["memory_size"]}}</td>
-                                  <td>{{model["netcard_model"]}}</td>
                                   <td>{{model["netcard_num"]}}</td>
-                                  <td>{{model["harddisk_name"]}}</td>
-                                  <td>{{model["harddisk_size"]}}</td>
-                                  <td>{{model["flashdisk_name"]}}</td>
-                                  <td>{{model["flashdisk_size"]}}</td>
-                                  <td>{{model["raid_type"]}}</td>
-                                  <td>{{model["remote_manage_card"]}}</td>
-                                  <td>{{model["virtual_type"]}}</td>
+                                  <td>{{model["harddisk"]}}</td>
+                                  <td>{{model["flashdisk"]}}</td>
+                                  <td>{{model["raid"]}}</td>
+                                  <td>{{model["remote_manage"]}}</td>
+                                  <td>{{model["virtual"]}}</td>
                                   <td>{{model["unit"]}}</td>
                                   <td>{{model["desc"]}}</td>
                                   <td><a href="edit_{{model["id"]}}" class="btn btn-success btn-xs" role="button">编辑</a>
@@ -130,7 +122,8 @@
 <script>
 $(document).ready(function() {
     $('#model_list').dataTable({
-        "bJQueryUI": true
+        "bJQueryUI": true,
+        "sScrollX": "100%"
     });
 });
 

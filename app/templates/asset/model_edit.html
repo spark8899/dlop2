@@ -29,179 +29,24 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
+                            {% from "_formhelpers.html" import render_field %}
                             <form method="post" action="/asset/model/edit_{{ slug }}" class="form-horizontal" role="form">
                                 {{form.hidden_tag()}}
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">机型编码：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.id(class="form-control") }}
-                                        {% for error in form.errors.id %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">机型类型：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.type(class="form-control") }}
-                                        {% for error in form.errors.type %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">设备厂商：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.manufacturer(class="form-control") }}
-                                        {% for error in form.errors.manufacturer %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">设备型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.model(class="form-control") }}
-                                        {% for error in form.errors.model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">CPU型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.cpu_model(class="form-control") }}
-                                        {% for error in form.errors.cpu_model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">CPU数量：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.cpu_num(class="form-control") }}
-                                        {% for error in form.errors.cpu_num %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">内存型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.memory_model(class="form-control") }}
-                                        {% for error in form.errors.memory_model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">内存大小：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.memory_size(class="form-control") }}
-                                        {% for error in form.errors.mem_size %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">网口型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.netcard_model(class="form-control") }}
-                                        {% for error in form.errors.netcard_model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">网口数量：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.netcard_num(class="form-control") }}
-                                        {% for error in form.errors.netcard_num %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">硬盘型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.harddisk_model(class="form-control") }}
-                                        {% for error in form.errors.harddisk_model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">硬盘大小：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.harddisk_size(class="form-control") }}
-                                        {% for error in form.errors.harddisk_size %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">闪存型号：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.flashdisk_model(class="form-control") }}
-                                        {% for error in form.errors.flashdisk_model %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">闪存大小：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.flashdisk_size(class="form-control") }}
-                                        {% for error in form.errors.flashdisk_size %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">RAID类型：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.raid_type(class="form-control") }}
-                                        {% for error in form.errors.raid_type %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">远程卡类型：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.remote_manage_card(class="form-control") }}
-                                        {% for error in form.errors.remote_manage_card %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">虚拟机类型：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.virtual_type(class="form-control") }}
-                                        {% for error in form.errors.virtual_type %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">机柜U数：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.unit(class="form-control") }}
-                                        {% for error in form.errors.unit %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">备注：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.desc(class="form-control") }}
-                                        {% for error in form.errors.desc %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
+                                {{ render_field(form.id)}}
+                                {{ render_field(form.type)}}
+                                {{ render_field(form.manufacturer)}}
+                                {{ render_field(form.model)}}
+                                {{ render_field(form.cpu_model)}}
+                                {{ render_field(form.cpu_num)}}
+                                {{ render_field(form.memory_size)}}
+                                {{ render_field(form.netcard_num)}}
+                                {{ render_field(form.harddisk)}}
+                                {{ render_field(form.flashdisk)}}
+                                {{ render_field(form.raid)}}
+                                {{ render_field(form.remote_manage)}}
+                                {{ render_field(form.virtual)}}
+                                {{ render_field(form.unit)}}
+                                {{ render_field(form.desc)}}
                                 <div class="form-group">
                                     <div class="col-sm-4">
                                     </div>

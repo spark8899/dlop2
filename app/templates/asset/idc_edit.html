@@ -29,107 +29,20 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
+                            {% from "_formhelpers.html" import render_field %}
                             <form method="post" action="/asset/idc/edit_{{ slug }}" class="form-horizontal" role="form">
                                 {{form.hidden_tag()}}
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">IDC编码：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.id(class="form-control") }}
-                                        {% for error in form.errors.id %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">带宽：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.bandwidth(class="form-control") }}
-                                        {% for error in form.errors.bandwidth %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">机柜数量：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.rack_num(class="form-control") }}
-                                        {% for error in form.errors.rack_num %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">机柜编码：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.rack_code(class="form-control") }}
-                                        {% for error in form.errors.rack_code %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">内网网段：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.lan_ip(class="form-control") }}
-                                        {% for error in form.errors.lan_ip %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">外网网段：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.wan_ip(class="form-control") }}
-                                        {% for error in form.errors.wan_ip %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">详细地址：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.location(class="form-control") }}
-                                        {% for error in form.errors.location %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">客服电话：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.telephone(class="form-control") }}
-                                        {% for error in form.errors.telephone %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">验证码：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.auth_code(class="form-control") }}
-                                        {% for error in form.errors.auth_code %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">传真：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.tax(class="form-control") }}
-                                        {% for error in form.errors.tax %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-4 control-label">备注：</label>
-                                    <div class="col-sm-8">
-                                        {{ form.desc(class="form-control") }}
-                                        {% for error in form.errors.desc %}
-                                        <span style="color: red;">[{{error}}]</span>
-                                        {% endfor %}
-                                    </div>
-                                </div>
+                                {{ render_field(form.id)}}
+                                {{ render_field(form.bandwidth)}}
+                                {{ render_field(form.rack_num)}}
+                                {{ render_field(form.rack_code)}}
+                                {{ render_field(form.lan_ip)}}
+                                {{ render_field(form.wan_ip)}}
+                                {{ render_field(form.location)}}
+                                {{ render_field(form.telephone)}}
+                                {{ render_field(form.auth_code)}}
+                                {{ render_field(form.tax)}}
+                                {{ render_field(form.desc)}}
                                 <div class="form-group">
                                     <div class="col-sm-4">
                                     </div>
