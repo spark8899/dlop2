@@ -31,18 +31,18 @@
                         <div class="col-lg-6">
                             {% from "_formhelpers.html" import render_field %}
                             <form method="post" action="/asset/idc/add" class="form-horizontal" role="form">
-                                {{form.hidden_tag()}}
-                                {{ render_field(form.id)}}
-                                {{ render_field(form.bandwidth)}}
-                                {{ render_field(form.rack_num)}}
-                                {{ render_field(form.rack_code)}}
-                                {{ render_field(form.lan_ip)}}
-                                {{ render_field(form.wan_ip)}}
-                                {{ render_field(form.location)}}
-                                {{ render_field(form.telephone)}}
-                                {{ render_field(form.auth_code)}}
-                                {{ render_field(form.tax)}}
-                                {{ render_field(form.desc)}}
+                                {{ form.hidden_tag() }}
+                                {{ render_field(form.id) }}
+                                {{ render_field(form.bandwidth) }}
+                                {{ render_field(form.rack_num) }}
+                                {{ render_field(form.rack_code) }}
+                                {{ render_field(form.lan_ip) }}
+                                {{ render_field(form.wan_ip) }}
+                                {{ render_field(form.location) }}
+                                {{ render_field(form.telephone) }}
+                                {{ render_field(form.auth_code) }}
+                                {{ render_field(form.tax) }}
+                                {{ render_field(form.desc) }}
                                 <div class="form-group">
                                     <div class="col-sm-4">
                                     </div>
